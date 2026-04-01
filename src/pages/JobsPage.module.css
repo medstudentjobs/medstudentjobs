@@ -1,0 +1,305 @@
+.page {
+  background-color: #F7F4EF;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.header {
+  background-color: #0B2545;
+  padding: 36px 24px;
+}
+
+.headerInner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.headerSub {
+  color: rgba(255,255,255,0.6);
+  font-size: 15px;
+}
+
+/* ── Body ── */
+.body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+/* ── Filters ── */
+.filters {
+  background-color: #ffffff;
+  border: 1px solid #D1DCE8;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterLabel {
+  font-weight: 600;
+  color: #0B2545;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.typeFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.typeBtn {
+  background-color: #EDF2F7;
+  color: #4A5568;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 20px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.typeBtn:hover {
+  background-color: #CBD5E0;
+}
+
+.typeBtnActive {
+  background-color: #0B2545 !important;
+  color: #ffffff !important;
+}
+
+.locationSelect {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #4A5568;
+  border: 1px solid #D1DCE8;
+  border-radius: 8px;
+  padding: 7px 12px;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: #0E7C86;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.clearBtn:hover {
+  text-decoration: underline;
+}
+
+/* ── Result count ── */
+.resultCount {
+  font-size: 14px;
+  color: #4A5568;
+  margin-bottom: 16px;
+}
+
+/* ── Job list ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Job card ── */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #D1DCE8;
+  border-radius: 12px;
+  padding: 22px 24px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.cardFeatured {
+  border-color: #0E7C86;
+  box-shadow: 0 2px 12px rgba(14,124,134,0.14);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background-color: #0E7C86;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+  letter-spacing: 0.04em;
+}
+
+.cardBadge {
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #0B2545;
+  margin: 4px 0;
+}
+
+.cardMeta {
+  font-size: 14px;
+  color: #4A5568;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 4px;
+}
+
+.pay {
+  color: #2D7D46;
+  font-weight: 600;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #4A5568;
+  line-height: 1.65;
+  margin: 10px 0 16px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.posted {
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+.applyBtn {
+  background-color: #0B2545;
+  color: #ffffff;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.applyBtn:hover {
+  background-color: #0E7C86;
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #D1DCE8;
+}
+
+.emptyIcon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+/* ── Modal ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.55);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 36px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.modalTitle {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  color: #0B2545;
+  margin: 0 0 6px;
+}
+
+.modalMeta {
+  color: #4A5568;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.modalBox {
+  background-color: #EAF5EE;
+  border: 1px solid #BBF7D0;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #166534;
+  line-height: 1.6;
+}
+
+.modalNote {
+  font-size: 13px;
+  color: #4A5568;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.modalClose {
+  width: 100%;
+  background-color: #0B2545;
+  color: #ffffff;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 9px;
+  transition: background-color 0.2s;
+}
+
+.modalClose:hover {
+  background-color: #0E7C86;
+}
+
+@media (max-width: 600px) {
+  .featuredBadge {
+    display: none;
+  }
+}
