@@ -41,7 +41,7 @@ export default function HomePage({ setPage }) {
 
         <div className={styles.heroContent}>
           <div className={styles.pill}>
-            Built by a 4th-year medical student, for medical students
+            Built by a medical student, for medical students
           </div>
 
           <h1 className={styles.h1}>
