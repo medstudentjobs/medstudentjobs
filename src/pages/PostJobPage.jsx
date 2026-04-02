@@ -88,7 +88,28 @@ export default function PostJobPage() {
     // ─────────────────────────────────────────────────────────────
 
     // Simulate network delay for demo
-    await new Promise((r) => setTimeout(r, 800));
+    await fetch(
+  `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE}/Jobs`,
+  {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      fields: {
+        Title: form.title,
+        Company: form.company,
+        Location: form.location,
+        Pay: form.pay,
+        Type: form.type,
+        Description: form.description,
+        Email: form.email,
+        Status: "Pending Review",
+      },
+    }),
+  }
+);
 
     setSubmitting(false);
     setSubmitted(true);
