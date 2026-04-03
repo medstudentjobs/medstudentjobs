@@ -1,12 +1,36 @@
 import { useState } from "react";
 import styles from "./PostJobPage.module.css";
 
+const ALL_TAGS = [
+  "Remote",
+  "In-Person",
+  "Hybrid",
+  "Paid",
+  "Unpaid",
+  "Part-Time",
+  "Full-Time",
+  "Flexible Schedule",
+  "No Experience Required",
+  "Pre-Med Friendly",
+  "Gap Year Friendly",
+];
+
+const JOB_TYPES = {
+  clinical:    "Clinical Jobs",
+  research:    "Research",
+  education:   "Education & Tutoring",
+  nonclinical: "Non-Clinical Healthcare",
+  internship:  "Internships & Opportunities",
+  other:       "Other / Flexible Jobs",
+};
+
 const INITIAL = {
   title: "",
   company: "",
   location: "",
   pay: "",
   type: "",
+  tags: [],
   description: "",
   email: "",
 };
@@ -16,7 +40,7 @@ function validate(form) {
   if (!form.title.trim())       errors.title       = "Job title is required";
   if (!form.company.trim())     errors.company     = "Company name is required";
   if (!form.location.trim())    errors.location    = "Location is required";
-  if (!form.type)               errors.type        = "Please select a job type";
+  if (!form.type)               errors.type        = "Please select a job category";
   if (!form.description.trim()) errors.description = "Description is required";
   if (!form.email.trim())       errors.email       = "Contact email is required";
   else if (!/\S+@\S+\.\S+/.test(form.email)) errors.email = "Enter a valid email address";
@@ -50,6 +74,13 @@ export default function PostJobPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
+  const toggleTag = (tag) => {
+    const updated = form.tags.includes(tag)
+      ? form.tags.filter((t) => t !== tag)
+      : [...form.tags, tag];
+    setForm({ ...form, tags: updated });
+  };
+
   const handleSubmit = async () => {
     const errs = validate(form);
     if (Object.keys(errs).length > 0) {
@@ -75,6 +106,7 @@ export default function PostJobPage() {
               Location: form.location,
               Pay: form.pay,
               Type: form.type,
+              Tags: form.tags.join(", "),
               Description: form.description,
               Email: form.email,
               Status: "Pending Review",
@@ -136,9 +168,10 @@ export default function PostJobPage() {
           <Field label="Location"         name="location" placeholder="e.g. Houston, TX or Remote"              form={form} setForm={setForm} errors={errors} required={true} />
           <Field label="Pay"              name="pay"      placeholder="e.g. $15–$18/hr"                         form={form} setForm={setForm} errors={errors} required={false} />
 
+          {/* Job Category */}
           <div className={styles.field}>
             <label className={styles.label}>
-              Job Type <span className={styles.req}>*</span>
+              Job Category <span className={styles.req}>*</span>
             </label>
             <select
               value={form.type}
@@ -146,14 +179,33 @@ export default function PostJobPage() {
               className={`${styles.input} ${errors.type ? styles.inputError : ""}`}
             >
               <option value="">Select a category…</option>
-              <option value="ma">Medical Assistant</option>
-              <option value="scribe">Medical Scribe</option>
-              <option value="research">Research</option>
-              <option value="tutoring">Tutoring</option>
+              {Object.entries(JOB_TYPES).map(([val, label]) => (
+                <option key={val} value={val}>{label}</option>
+              ))}
             </select>
             {errors.type && <p className={styles.error}>{errors.type}</p>}
           </div>
 
+          {/* Tags */}
+          <div className={styles.field}>
+            <label className={styles.label}>
+              Select all that apply <span className={styles.optional}>(optional)</span>
+            </label>
+            <div className={styles.tagsGrid}>
+              {ALL_TAGS.map((tag) => (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => toggleTag(tag)}
+                  className={`${styles.tagBtn} ${form.tags.includes(tag) ? styles.tagBtnActive : ""}`}
+                >
+                  {form.tags.includes(tag) ? "✓ " : ""}{tag}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Description */}
           <div className={styles.field}>
             <label className={styles.label}>
               Job Description <span className={styles.req}>*</span>
