@@ -74,10 +74,7 @@ export default function PostJobPage() {
               Company: form.company,
               Location: form.location,
               Pay: form.pay,
-              Type: form.type === "ma" ? "Medical Assistant" :
-      form.type === "scribe" ? "Medical Scribe" :
-      form.type === "research" ? "Research" :
-      form.type === "tutoring" ? "Tutoring" : form.type,
+              Type: form.type,
               Description: form.description,
               Email: form.email,
               Status: "Pending Review",

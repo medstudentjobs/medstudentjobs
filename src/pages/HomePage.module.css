@@ -281,3 +281,32 @@
 .bannerBtn:hover {
   background-color: #13A8B4;
 }
+.tagsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tagBtn {
+  background-color: #EDF2F7;
+  color: #4A5568;
+  border: 1px solid #D1DCE8;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tagBtn:hover {
+  border-color: #0E7C86;
+  color: #0E7C86;
+}
+
+.tagBtnActive {
+  background-color: #0B2545 !important;
+  color: #ffffff !important;
+  border-color: #0B2545 !important;
+}

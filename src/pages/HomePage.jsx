@@ -1,10 +1,12 @@
 import styles from "./HomePage.module.css";
 
 const CATEGORIES = [
-  { icon: "🩺", label: "Medical Assistant", type: "ma",       count: 2 },
-  { icon: "📋", label: "Medical Scribe",    type: "scribe",   count: 2 },
-  { icon: "🔬", label: "Research",          type: "research", count: 2 },
-  { icon: "📚", label: "Tutoring",          type: "tutoring", count: 2 },
+  { icon: "🏥", label: "Clinical Jobs",               type: "clinical",    count: 3 },
+  { icon: "🔬", label: "Research",                    type: "research",    count: 2 },
+  { icon: "📚", label: "Education & Tutoring",        type: "education",   count: 2 },
+  { icon: "💼", label: "Non-Clinical Healthcare",     type: "nonclinical", count: 1 },
+  { icon: "🎓", label: "Internships & Opportunities", type: "internship",  count: 0 },
+  { icon: "⚡", label: "Other / Flexible Jobs",       type: "other",       count: 0 },
 ];
 
 const STATS = [
