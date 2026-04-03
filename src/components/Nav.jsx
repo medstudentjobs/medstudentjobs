@@ -9,7 +9,7 @@ export default function Nav({ page, setPage }) {
       <div className={styles.inner}>
         {/* Logo */}
         <button className={styles.logo} onClick={() => { setPage("home"); setMobileOpen(false); }}>
-          <img src="/logo.png" width="36" height="36" style={{borderRadius: "8px", objectFit: "cover", objectPosition: "center 5%", transform: "scale(1.8)", overflow: "hidden"}} alt="logo" />
+          <span className={styles.logoIcon}>☤</span>
           <span className={styles.logoText}>
             MedStudentJobs<span className={styles.logoDot}>.com</span>
           </span>
