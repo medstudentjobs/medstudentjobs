@@ -15,7 +15,8 @@ function ApplyModal({ job, onClose }) {
             📧 Email your CV and a brief intro to the employer:
           </p>
           
-            href={`mailto:${job.email}?subject=MedStudentJobs – ${job.title}`}
+            <a
+              href={`mailto:${job.email}?subject=MedStudentJobs – ${job.title}`}
             style={{
               display: "inline-block",
               marginTop: "12px",
