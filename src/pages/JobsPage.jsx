@@ -12,13 +12,28 @@ function ApplyModal({ job, onClose }) {
         <p className={styles.modalMeta}>{job.company} · {job.location}</p>
         <div className={styles.modalBox}>
           <p>
-            📧 To apply, email your CV and a brief intro to the employer. Use the subject line:{" "}
-            <strong>"MedStudentJobs – {job.title}"</strong>
+            📧 Email your CV and a brief intro to the employer:
           </p>
+          
+            href={`mailto:${job.email}?subject=MedStudentJobs – ${job.title}`}
+            style={{
+              display: "inline-block",
+              marginTop: "12px",
+              backgroundColor: "#0E7C86",
+              color: "#ffffff",
+              padding: "10px 20px",
+              borderRadius: "8px",
+              textDecoration: "none",
+              fontWeight: "600",
+              fontSize: "14px",
+            }}
+          >
+            ✉️ Email {job.company}
+          </a>
         </div>
         <p className={styles.modalNote}>
-          In your live site, each listing will include a direct application link or email address
-          provided by the employer when they post the job.
+          Clicking the button above will open your email app with the employer's
+          address and job title pre-filled in the subject line.
         </p>
         <button className={styles.modalClose} onClick={onClose}>
           Close
