@@ -1,12 +1,12 @@
 import styles from "./HomePage.module.css";
 
 const CATEGORIES = [
-  { icon: "🏥", label: "Clinical Jobs",               type: "clinical",    count: 3 },
-  { icon: "🔬", label: "Research",                    type: "research",    count: 2 },
-  { icon: "📚", label: "Education & Tutoring",        type: "education",   count: 2 },
-  { icon: "💼", label: "Non-Clinical Healthcare",     type: "nonclinical", count: 1 },
-  { icon: "🎓", label: "Internships & Opportunities", type: "internship",  count: 0 },
-  { icon: "⚡", label: "Other / Flexible Jobs",       type: "other",       count: 0 },
+  { icon: "🏥", label: "Clinical Jobs",               type: "clinical",    count: 2 },
+  { icon: "🔬", label: "Research",                    type: "research",    count: 0 },
+  { icon: "📚", label: "Education & Tutoring",        type: "education",   count: 0 },
+  { icon: "💼", label: "Non-Clinical Healthcare",     type: "nonclinical", count: 0 },
+  { icon: "🎓", label: "Internships & Opportunities", type: "internship",  count: 1 },
+  { icon: "⚡", label: "Other / Flexible Jobs",       type: "other",       count: 1 },
 ];
 
 const STATS = [
