@@ -62,7 +62,26 @@ function JobCard({ job, onApply }) {
       </div>
 
       <p className={styles.cardDesc}>{job.description}</p>
-
+{job.tags && job.tags.length > 0 && (
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "12px" }}>
+    {job.tags.map((tag) => (
+      <span
+        key={tag}
+        style={{
+          backgroundColor: "#EDF2F7",
+          color: "#4A5568",
+          fontSize: "11px",
+          fontWeight: "500",
+          padding: "3px 10px",
+          borderRadius: "20px",
+          fontFamily: "'DM Sans', sans-serif",
+        }}
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+)}
       <div className={styles.cardFooter}>
         <span className={styles.posted}>Posted {job.posted}</span>
         <button className={styles.applyBtn} onClick={() => onApply(job)}>
