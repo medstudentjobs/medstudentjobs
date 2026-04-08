@@ -10,7 +10,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Full-Time", "No Experience Required", "Pre-Med Friendly", "Gap Year Friendly"],
     description:
       "Growing MD/OD practice is looking for an Ophthalmic Tech in Brooklyn-Midwood. Schedule: M, W, Th, Sat, Sun or M–F. We offer a very friendly work environment, flexible hours, and paid training. All locations are near public transportation. Starting salary $18/hr and higher for experienced techs and MAs.",
-    posted: "1 day ago",
+    posted: "2 days ago",
     featured: true,
   },
   {
@@ -24,7 +24,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Full-Time", "Part-Time", "Flexible Schedule", "Gap Year Friendly", "Pre-Med Friendly"],
     description:
       "MD/OD practice is looking for positive, quick-learning front desk staff. We offer a pleasant work environment, training, and support. Offices located near public transportation in Brooklyn-Midwood, NYC-Midtown, and Staten Island (Hyland Blvd). Full and part-time positions available.",
-    posted: "1 day ago",
+    posted: "2 days ago",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Part-Time", "Full-Time", "Flexible Schedule"],
     description:
       "Part to full-time caregiver and personal attendant for a health-conscious woman in Durango, CO. Responsibilities include household work, cooking, personal care, and companionship. Candidate must have caregiving experience and a strong work ethic. Evening and weekend availability preferred with some scheduling flexibility. Background in nursing, massage, physical therapy, herbs, or cooking is a plus. Pay starts at $25/hr through the CDASS program and increases with experience. Minimum one year commitment expected. Three work references required.",
-    posted: "1 day ago",
+    posted: "2 days ago",
     featured: false,
   },
   {
@@ -52,7 +52,7 @@ export const JOBS = [
     tags: ["In-Person", "Unpaid", "Full-Time", "No Experience Required", "Pre-Med Friendly", "Gap Year Friendly"],
     description:
       "Richmond University Medical Center's Clinical Research Center offers a one-year unpaid research internship for medical and premedical graduates. Work under the guidance of Principal Investigators on industry-sponsored and investigator-initiated clinical trials. Responsibilities include patient enrollment, data collection, case report form completion, protocol review, and participation in project team meetings. All work follows GCP guidelines. Schedule: Monday–Friday, up to 35 hrs/week. Volunteers receive free lunch on working days, a $2,000 stipend every 6 months, and hospital holidays. Upon completion, candidates receive a Clinical Research Coordinator (CRC) certificate. Past interns have been accepted into US medical residency and ACGME programs.",
-    posted: "1 day ago",
+    posted: "2 days ago",
     featured: false,
   },
   {
@@ -66,6 +66,20 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Part-Time", "Full-Time"],
     description:
       "Medical Assistant needed for a Podiatry Practice in Arlington Heights, IL. Full-time preferred but will consider part-time. Medical Assistant certificate required. Relaxed and enjoyable work environment with opportunity for advancement. Polish speaking is a plus.",
+    posted: "1 day ago",
+    featured: false,
+  },
+  {
+    id: 6,
+    title: "Front Desk / Medical Assistant (Part-Time)",
+    company: "Private Practice — Krupadev H L M.D.",
+    location: "Marietta, OH",
+    pay: "$12/hr",
+    type: "clinical",
+    email: "christian@medstudentjobs.com",
+    tags: ["In-Person", "Paid", "Part-Time", "Flexible Schedule"],
+    description:
+      "Part-time Front Desk / Medical Assistant needed for a friendly, patient-focused practice in Marietta, Ohio. Approximately 24 hours per week. Responsibilities include greeting patients, managing front desk reception, answering phones, scheduling appointments, check-in/check-out, billing and insurance assistance, record maintenance, and clear communication with patients and staff. Looking for candidates with strong communication skills, billing and insurance experience preferred, professional demeanor, and reliable attendance. Ideal candidate is 40 years of age or older seeking part-time work only. Starting wage: $12/hr. No traditional benefits. Option to participate in IRA retirement plan. Interviews preferred Wednesday–Friday after 3pm, with Saturday availability if needed. To apply call or text: 508-964-3912",
     posted: "Today",
     featured: false,
   },
