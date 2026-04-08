@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.css";
 
 const CATEGORIES = [
-  { icon: "🏥", label: "Clinical Jobs",               type: "clinical",    count: 3 },
+  { icon: "🏥", label: "Clinical Jobs",               type: "clinical",    count: 4 },
   { icon: "🔬", label: "Research",                    type: "research",    count: 0 },
   { icon: "📚", label: "Education & Tutoring",        type: "education",   count: 0 },
   { icon: "💼", label: "Non-Clinical Healthcare",     type: "nonclinical", count: 0 },
