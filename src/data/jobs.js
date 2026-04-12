@@ -10,7 +10,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Full-Time", "No Experience Required", "Pre-Med Friendly", "Gap Year Friendly"],
     description:
       "Growing MD/OD practice is looking for an Ophthalmic Tech in Brooklyn-Midwood. Schedule: M, W, Th, Sat, Sun or M–F. We offer a very friendly work environment, flexible hours, and paid training. All locations are near public transportation. Starting salary $18/hr and higher for experienced techs and MAs.",
-    posted: "2 days ago",
+    posted: "3 days ago",
     featured: true,
   },
   {
@@ -24,7 +24,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Full-Time", "Part-Time", "Flexible Schedule", "Gap Year Friendly", "Pre-Med Friendly"],
     description:
       "MD/OD practice is looking for positive, quick-learning front desk staff. We offer a pleasant work environment, training, and support. Offices located near public transportation in Brooklyn-Midwood, NYC-Midtown, and Staten Island (Hyland Blvd). Full and part-time positions available.",
-    posted: "2 days ago",
+    posted: "3 days ago",
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Part-Time", "Full-Time", "Flexible Schedule"],
     description:
       "Part to full-time caregiver and personal attendant for a health-conscious woman in Durango, CO. Responsibilities include household work, cooking, personal care, and companionship. Candidate must have caregiving experience and a strong work ethic. Evening and weekend availability preferred with some scheduling flexibility. Background in nursing, massage, physical therapy, herbs, or cooking is a plus. Pay starts at $25/hr through the CDASS program and increases with experience. Minimum one year commitment expected. Three work references required.",
-    posted: "2 days ago",
+    posted: "3 days ago",
     featured: false,
   },
   {
@@ -52,7 +52,7 @@ export const JOBS = [
     tags: ["In-Person", "Unpaid", "Full-Time", "No Experience Required", "Pre-Med Friendly", "Gap Year Friendly"],
     description:
       "Richmond University Medical Center's Clinical Research Center offers a one-year unpaid research internship for medical and premedical graduates. Work under the guidance of Principal Investigators on industry-sponsored and investigator-initiated clinical trials. Responsibilities include patient enrollment, data collection, case report form completion, protocol review, and participation in project team meetings. All work follows GCP guidelines. Schedule: Monday–Friday, up to 35 hrs/week. Volunteers receive free lunch on working days, a $2,000 stipend every 6 months, and hospital holidays. Upon completion, candidates receive a Clinical Research Coordinator (CRC) certificate. Past interns have been accepted into US medical residency and ACGME programs.",
-    posted: "2 days ago",
+    posted: "3 days ago",
     featured: false,
   },
   {
@@ -66,7 +66,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Part-Time", "Full-Time"],
     description:
       "Medical Assistant needed for a Podiatry Practice in Arlington Heights, IL. Full-time preferred but will consider part-time. Medical Assistant certificate required. Relaxed and enjoyable work environment with opportunity for advancement. Polish speaking is a plus.",
-    posted: "1 day ago",
+    posted: "2 days ago",
     featured: false,
   },
   {
@@ -80,7 +80,7 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Part-Time", "Flexible Schedule"],
     description:
       "Part-time Front Desk / Medical Assistant needed for a friendly, patient-focused practice in Marietta, Ohio. Approximately 24 hours per week. Responsibilities include greeting patients, managing front desk reception, answering phones, scheduling appointments, check-in/check-out, billing and insurance assistance, record maintenance, and clear communication with patients and staff. Looking for candidates with strong communication skills, billing and insurance experience preferred, professional demeanor, and reliable attendance. Ideal candidate is 40 years of age or older seeking part-time work only. Starting wage: $12/hr. No traditional benefits. Option to participate in IRA retirement plan. Interviews preferred Wednesday–Friday after 3pm, with Saturday availability if needed. To apply call or text: 508-964-3912",
-    posted: "1 day ago",
+    posted: "2 days ago",
     featured: false,
   },
   {
@@ -94,7 +94,7 @@ export const JOBS = [
     tags: ["Remote", "Paid", "Part-Time", "Full-Time", "Flexible Schedule", "Pre-Med Friendly", "Gap Year Friendly"],
     description:
       "URGENT HIRE — 2 positions available. This is a mentorship-focused role, not traditional tutoring. Candidates should act as a 'Big Sister/Big Brother' — building strong, supportive relationships with high school learners. Conduct 90-minute online 1-on-1 lessons, prepare lessons using online tools, track learner progress, and complete basic admin. Must be energetic, emotionally intelligent, organized, and passionate about education. Strong results in Maths, Accounting, Life Sciences, or Languages preferred. Tutoring experience helpful but not required. Technical requirements: stable internet (20 Mbps minimum) and laptop/desktop. Paid bi-weekly on a freelance basis. Flexible schedule around studies. To apply, submit your CV, latest transcript, and a 30–60 second voice note or video to office.tollcon@gmail.com or call/WhatsApp 083 792 9036.",
-    posted: "Today",
+    posted: "1 day ago",
     featured: false,
   },
   {
@@ -108,6 +108,48 @@ export const JOBS = [
     tags: ["In-Person", "Paid", "Full-Time", "Gap Year Friendly"],
     description:
       "Pleasant and motivated Medical Assistant needed for a primary care clinic in Helotes, TX. Experience in front and back-office duties required. Responsibilities include checking in and out patients, taking vital signs, obtaining accurate medical history, answering phone calls, verifying insurance, and performing minor office procedures such as EKGs, nebulizer treatments, ear wax removal, injections, and immunizations. Spanish-speaking preferred.",
+    posted: "1 day ago",
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "High School Chemistry Tutor",
+    company: "Club Z! In-Home Tutoring Services",
+    location: "Katy, TX",
+    pay: "$22–$25/hr",
+    type: "education",
+    email: "cnwachukwu@clubztutoring.com",
+    tags: ["In-Person", "Paid", "Part-Time", "Flexible Schedule", "Pre-Med Friendly", "Gap Year Friendly"],
+    description:
+      "Club Z! Tutoring, a nationally recognized tutoring company with over 30 years of experience, is seeking high school Chemistry tutors in Katy, TX. Set your own schedule, start tutoring quickly, and earn competitive pay working one-on-one with students. Subjects: Grade 8–12 Math and Science (Chemistry preferred). Minimum AA degree required (BA or Teaching Certificate preferred). Minimum one year of tutoring experience. Reliable transportation required for in-home sessions. Part-time contract role. To apply, reply with your resume and the subjects you are most excited to tutor.",
+    posted: "Today",
+    featured: false,
+  },
+  {
+    id: 10,
+    title: "Remote Health Writer",
+    company: "New Jersey IEC",
+    location: "Somerset, NJ (Remote)",
+    pay: "$25–$29/hr",
+    type: "other",
+    email: "support@schresult.com",
+    tags: ["Remote", "Paid", "Part-Time", "Flexible Schedule", "Gap Year Friendly"],
+    description:
+      "New Jersey IEC is hiring a Remote Health Writer to create engaging content promoting health and safety standards in the construction industry. Research and write articles on health and safety topics, collaborate with subject matter experts, edit and proofread content, and develop content strategies. Strong research, writing, and editing skills required. Familiarity with SEO best practices and content management systems a plus. Submit your CV and writing samples demonstrating health or safety writing ability.",
+    posted: "Today",
+    featured: false,
+  },
+  {
+    id: 11,
+    title: "Social Care Coordinator",
+    company: "Epicured, Inc.",
+    location: "Remote (United States)",
+    pay: "$20–$22/hr",
+    type: "nonclinical",
+    email: "careers@getepicured.com",
+    tags: ["Remote", "Paid", "Full-Time", "Pre-Med Friendly", "Gap Year Friendly"],
+    description:
+      "Epicured, Inc. is seeking a Social Care Coordinator to support Medicaid members through referral coordination, screening, and care navigation services within the Social Care Network (SCN). Manage high-volume inbound and outbound communications, conduct referral intake and eligibility screening per NYS Medicaid guidelines, schedule and support non-clinical assessments, and coordinate referrals across internal teams. Experience in healthcare, care coordination, or patient navigation preferred. Bilingual English/Spanish or other languages a plus. Benefits include health, dental, and vision insurance, 401(k), paid time off, and employee meal discounts. Full-time remote role.",
     posted: "Today",
     featured: false,
   },
