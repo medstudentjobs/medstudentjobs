@@ -3,6 +3,86 @@ import { JOBS, JOB_TYPES } from "../data/jobs";
 import Badge from "../components/Badge";
 import styles from "./JobsPage.module.css";
 
+function ViewModal({ job, onClose, onApply }) {
+  if (!job) return null;
+  return (
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div
+        className={styles.modal}
+        onClick={(e) => e.stopPropagation()}
+        style={{ maxWidth: 620, maxHeight: "85vh", overflowY: "auto" }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+          <Badge type={job.type} />
+          <button
+            onClick={onClose}
+            style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "#9CA3AF" }}
+          >
+            ✕
+          </button>
+        </div>
+
+        <h2 className={styles.modalTitle}>{job.title}</h2>
+        <p className={styles.modalMeta}>{job.company} · {job.location}</p>
+
+        {job.pay && (
+          <p style={{ color: "#2D7D46", fontWeight: 600, fontSize: 15, marginBottom: 16 }}>
+            💵 {job.pay}
+          </p>
+        )}
+
+        {job.tags && job.tags.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: 16 }}>
+            {job.tags.map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  backgroundColor: "#EDF2F7",
+                  color: "#4A5568",
+                  fontSize: "12px",
+                  fontWeight: "500",
+                  padding: "4px 12px",
+                  borderRadius: "20px",
+                  fontFamily: "'DM Sans', sans-serif",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div
+          style={{
+            backgroundColor: "#F7F4EF",
+            borderRadius: 10,
+            padding: 16,
+            marginBottom: 20,
+            fontSize: 14,
+            color: "#4A5568",
+            lineHeight: 1.75,
+            whiteSpace: "pre-wrap",
+          }}
+        >
+          {job.description}
+        </div>
+
+        <p style={{ fontSize: 12, color: "#9CA3AF", marginBottom: 16 }}>
+          Posted {job.posted}
+        </p>
+
+        <button
+          onClick={() => { onClose(); onApply(job); }}
+          className={styles.modalClose}
+          style={{ backgroundColor: "#0E7C86" }}
+        >
+          Apply for this Job →
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function ApplyModal({ job, onClose }) {
   if (!job) return null;
   return (
@@ -11,12 +91,9 @@ function ApplyModal({ job, onClose }) {
         <h2 className={styles.modalTitle}>Apply for: {job.title}</h2>
         <p className={styles.modalMeta}>{job.company} · {job.location}</p>
         <div className={styles.modalBox}>
-          <p>
-            📧 Email your CV and a brief intro to the employer:
-          </p>
-          
-            <a
-              href={`mailto:${job.email}?subject=MedStudentJobs – ${job.title}`}
+          <p>📧 Email your CV and a brief intro to the employer:</p>
+          <a
+            href={`mailto:${job.email}?subject=MedStudentJobs – ${job.title}`}
             style={{
               display: "inline-block",
               marginTop: "12px",
@@ -44,7 +121,7 @@ function ApplyModal({ job, onClose }) {
   );
 }
 
-function JobCard({ job, onApply }) {
+function JobCard({ job, onApply, onView }) {
   return (
     <div className={`${styles.card} ${job.featured ? styles.cardFeatured : ""}`}>
       {job.featured && <span className={styles.featuredBadge}>FEATURED</span>}
@@ -53,7 +130,13 @@ function JobCard({ job, onApply }) {
         <Badge type={job.type} />
       </div>
 
-      <h3 className={styles.cardTitle}>{job.title}</h3>
+      <h3
+        className={styles.cardTitle}
+        onClick={() => onView(job)}
+        style={{ cursor: "pointer" }}
+      >
+        {job.title}
+      </h3>
 
       <div className={styles.cardMeta}>
         <span>🏢 {job.company}</span>
@@ -61,32 +144,47 @@ function JobCard({ job, onApply }) {
         {job.pay && <span className={styles.pay}>💵 {job.pay}</span>}
       </div>
 
-      <p className={styles.cardDesc}>{job.description}</p>
-{job.tags && job.tags.length > 0 && (
-  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "12px" }}>
-    {job.tags.map((tag) => (
-      <span
-        key={tag}
-        style={{
-          backgroundColor: "#EDF2F7",
-          color: "#4A5568",
-          fontSize: "11px",
-          fontWeight: "500",
-          padding: "3px 10px",
-          borderRadius: "20px",
-          fontFamily: "'DM Sans', sans-serif",
-        }}
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-)}
+      <p className={styles.cardDesc}>
+        {job.description.length > 150
+          ? job.description.substring(0, 150) + "..."
+          : job.description}
+      </p>
+
+      {job.tags && job.tags.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "12px" }}>
+          {job.tags.map((tag) => (
+            <span
+              key={tag}
+              style={{
+                backgroundColor: "#EDF2F7",
+                color: "#4A5568",
+                fontSize: "11px",
+                fontWeight: "500",
+                padding: "3px 10px",
+                borderRadius: "20px",
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
       <div className={styles.cardFooter}>
         <span className={styles.posted}>Posted {job.posted}</span>
-        <button className={styles.applyBtn} onClick={() => onApply(job)}>
-          Apply →
-        </button>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <button
+            className={styles.applyBtn}
+            style={{ backgroundColor: "#4A5568" }}
+            onClick={() => onView(job)}
+          >
+            View Details
+          </button>
+          <button className={styles.applyBtn} onClick={() => onApply(job)}>
+            Apply →
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -96,6 +194,7 @@ export default function JobsPage() {
   const [typeFilter, setTypeFilter] = useState("all");
   const [locationFilter, setLocationFilter] = useState("");
   const [applyJob, setApplyJob] = useState(null);
+  const [viewJob, setViewJob] = useState(null);
 
   const locations = [...new Set(JOBS.map((j) => j.location))].sort();
 
@@ -108,8 +207,8 @@ export default function JobsPage() {
   return (
     <div className={styles.page}>
       <ApplyModal job={applyJob} onClose={() => setApplyJob(null)} />
+      <ViewModal job={viewJob} onClose={() => setViewJob(null)} onApply={setApplyJob} />
 
-      {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerInner}>
           <h1 className={styles.h1}>Browse Jobs</h1>
@@ -118,7 +217,6 @@ export default function JobsPage() {
       </div>
 
       <div className={styles.body}>
-        {/* Filters */}
         <div className={styles.filters}>
           <span className={styles.filterLabel}>Filter:</span>
 
@@ -155,12 +253,10 @@ export default function JobsPage() {
           )}
         </div>
 
-        {/* Count */}
         <p className={styles.resultCount}>
           Showing <strong>{filtered.length}</strong> job{filtered.length !== 1 ? "s" : ""}
         </p>
 
-        {/* Listings */}
         <div className={styles.list}>
           {filtered.length === 0 ? (
             <div className={styles.empty}>
@@ -169,7 +265,7 @@ export default function JobsPage() {
             </div>
           ) : (
             filtered.map((job) => (
-              <JobCard key={job.id} job={job} onApply={setApplyJob} />
+              <JobCard key={job.id} job={job} onApply={setApplyJob} onView={setViewJob} />
             ))
           )}
         </div>
