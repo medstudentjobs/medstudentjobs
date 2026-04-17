@@ -24,12 +24,19 @@ export default function Nav({ page, setPage }) {
             Browse Jobs
           </button>
           <button
+            className={`${styles.link} ${page === "about" ? styles.linkActive : ""}`}
+            onClick={() => setPage("about")}
+          >
+            About
+          </button>
+          <button
             className={styles.postBtn}
             onClick={() => setPage("post")}
           >
             Post a Job
           </button>
         </div>
+        
 
         {/* Mobile hamburger */}
         <button

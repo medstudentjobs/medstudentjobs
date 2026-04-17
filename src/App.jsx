@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import JobsPage from "./pages/JobsPage";
 import PostJobPage from "./pages/PostJobPage";
+import AboutPage from "./pages/AboutPage";
 
 export default function App() {
   const [page, setPage] = useState("home");
@@ -20,6 +21,7 @@ export default function App() {
         {page === "home" && <HomePage setPage={setPage} />}
         {page === "jobs" && <JobsPage />}
         {page === "post" && <PostJobPage />}
+        {page === "about" && <AboutPage setPage={setPage} />}
       </main>
       <Footer setPage={setPage} />
     </div>
