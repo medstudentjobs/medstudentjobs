@@ -14,7 +14,7 @@ export default function AboutPage({ setPage }) {
       <div className={styles.body}>
         {/* Story */}
         <div className={styles.card}>
-          <h2 className={styles.sectionTitle}>Why I Built This</h2>
+          <h2 className={styles.sectionTitle}>How It Started</h2>
           <p className={styles.text}>
             My name is Christian Zambrano. I'm a medical student, and like most of my peers,
             I spent countless hours sifting through Indeed, Craigslist, and general job boards
