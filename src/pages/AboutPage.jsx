@@ -35,27 +35,6 @@ export default function AboutPage({ setPage }) {
           </p>
         </div>
 
-        {/* About Christian */}
-        <div className={styles.card}>
-          <h2 className={styles.sectionTitle}>About the Founder</h2>
-          <div className={styles.founderGrid}>
-            <div className={styles.founderInfo}>
-              <p className={styles.text}>
-                Christian Zambrano is an M.D. Candidate and the founder of MedStudentJobs.com.
-                His background spans clinical research, academic publishing, and healthcare
-                entrepreneurship.
-              </p>
-              <ul className={styles.credList}>
-                <li>🏥 M.D. Candidate — Saint James School of Medicine</li>
-                <li>🔬 Principal Investigator — AI-driven oncology imaging research, Harvard Medical School</li>
-                <li>📖 Published author — Oxford University Press textbook chapter on sleep chronobiology</li>
-                <li>📋 NIH GCP (ICH E6(R3)) certified — NIDA</li>
-                <li>🌐 Founder — MedStudentJobs.com</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         {/* Mission */}
         <div className={styles.missionCard}>
           <h2 className={styles.missionTitle}>Our Mission</h2>
@@ -96,16 +75,10 @@ export default function AboutPage({ setPage }) {
             completely free during our beta period.
           </p>
           <div className={styles.employerButtons}>
-            <button
-              className={styles.postBtn}
-              onClick={() => setPage("post")}
-            >
+            <button className={styles.postBtn} onClick={() => setPage("post")}>
               Post a Job — It's Free
             </button>
-            <a
-              href="mailto:christian@medstudentjobs.com"
-              className={styles.emailBtn}
-            >
+            <a href="mailto:christian@medstudentjobs.com" className={styles.emailBtn}>
               Contact Us
             </a>
           </div>
